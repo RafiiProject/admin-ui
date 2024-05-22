@@ -6,7 +6,7 @@ import Widget from "../../components/widget/Widget";
 
 const Mylist = () => {
   return (
-    <div className="list">
+    <div className="mylist">
       <Sidebar />
       <div className="listContainer">
         <Navbar />
@@ -14,7 +14,9 @@ const Mylist = () => {
           <Widget type="user" />
           <Widget type="order" />
         </div>
-        <Mydatatable />
+        <div className="table">
+          <Mydatatable title="All Data" />
+        </div>
       </div>
     </div>
   );

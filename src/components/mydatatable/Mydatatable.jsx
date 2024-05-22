@@ -25,10 +25,10 @@ const rows = [
   { id: 15, ProductName: "Salad"}
 ];
 
-const MyDatatable = () => {
+const MyDatatable = ({ title }) => {
   return (
-    <div className="datatable">
-      <div className="datatableTitle">All Data</div>
+    <div className="myDatatable">
+      <div className="myDatatableTitle">{title}</div>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -37,7 +37,7 @@ const MyDatatable = () => {
             paginationModel: { page: 0, pageSize: 5 },
           },
         }}
-        pageSizeOptions={[5, 10, 15]}
+        pageSizeOptions={[5, 10]}
         checkboxSelection
       />
     </div>
