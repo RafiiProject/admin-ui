@@ -55,6 +55,7 @@ const Widget = ({ type }) => {
         title: "EARNINGS",
         isMoney: true,
         link: "View net earnings",
+        query:"users",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -68,6 +69,7 @@ const Widget = ({ type }) => {
         title: "BALANCE",
         isMoney: true,
         link: "See details",
+        query:"users",
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"
