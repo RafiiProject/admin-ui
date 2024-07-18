@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Mydatatable from "../../components/mydatatable/Mydatatable";
 import Widget from "../../components/widget/Widget";
 
-const Mylist = () => {
+const Mylist = ({columns}) => {
   return (
     <div className="mylist">
       <Sidebar />
@@ -13,12 +13,14 @@ const Mylist = () => {
         <div className="widgets">
           <Widget type="user" />
           <Widget type="order" />
+          <Widget type="category" />
         </div>
         <div className="table">
-          <Mydatatable title="All Data" />
+          <Mydatatable columns={columns}/>
         </div>
       </div>
     </div>
+    
   );
 };
 

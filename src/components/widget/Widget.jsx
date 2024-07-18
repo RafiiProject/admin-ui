@@ -7,6 +7,7 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {useEffect, useState} from "react";
 import {collection, query, where, getDocs} from "firebase/firestore";
+import CategoryIcon from "@mui/icons-material/Category";
 import {db} from "../../firebase";
 
 const Widget = ({ type }) => {
@@ -35,7 +36,7 @@ const Widget = ({ type }) => {
       break;
     case "order":
       data = {
-        title: "ORDERS",
+        title: "PRODUCTS",
         isMoney: false,
         link: "View all orders",
         query:"products",
@@ -81,7 +82,25 @@ const Widget = ({ type }) => {
         ),
       };
       break;
+      case "category":
+      data = {
+        title: "CATEGORIES",
+        isMoney: false,
+        link: "View all categories",
+        query: "categories",
+        icon: (
+          <CategoryIcon
+            className="icon"
+            style={{
+              backgroundColor: "rgba(255, 0, 0, 0.2)",
+              color: "crimson",
+            }}
+          />
+        ),
+      };
+      break;
     default:
+      console.error("Invalid widget type:", type);
       break;
   }
 
